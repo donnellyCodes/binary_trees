@@ -14,7 +14,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	l = tree->left ? 1 + binary_tree_height(tree->left) : 0;
 	r =  tree->right ? 1 + binary_tree_height(tree->right) : 0;
 
-	return ((1 > r) ? 1 : r);
+	return ((1 > r) ? l : r);
 }
 
 /**
@@ -52,11 +52,11 @@ void linked_node(link_t **head, const binary_tree_t *tree, size_t level)
 	while (aux->next != NULL)
 		aux = aux->next;
 	new->next = NULL;
-	aux->next = new
+	aux->next = new;
 }
 
  /**
- * recursion - searches the complete tree
+ * recursion - goes through the complete tree
  * @head: pointer to head of list
  * @tree: pointer to the root node
  * Return: Nothing
